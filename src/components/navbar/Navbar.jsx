@@ -13,7 +13,7 @@ const Navbar = () => {
                 animate={{opacity: 1,scale: 1}}
                 transition={{delay: 0.2,duration: 0.5}}
             >
-                E.Jeffrey
+                E-Jeff
                 </motion.span>
             <div className="social">
             <a href="#"><img src="/facebook.png" alt="" /></a>

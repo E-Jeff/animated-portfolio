@@ -5,7 +5,6 @@ import { motion } from "framer-motion"
 import { useState } from "react"
 
 const Sidebar = () => {
-    // 39:11
     const [open, setOpen] = useState(false)
     
     const variants = {
