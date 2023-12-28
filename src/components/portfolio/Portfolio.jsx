@@ -1,5 +1,6 @@
 import "./portfolio.scss";
-// import { motion, useScroll, useRef, useSpring } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
+import { useRef } from "react";
 
 const items = [
   {
@@ -29,18 +30,32 @@ const items = [
 ];
 
 const Single = ({ item }) => {
-//   const ref = useRef();
+  const ref = useRef();
+
+  const { ScrollYProgress } = useScroll({
+    target: ref,
+  });
+
+  // const y = useTransform(ScrollYProgress, [0, 1], [-300, 300]);
 
   return (
-    <section>
+    <section ref={ref}>
       <div className="container">
-        <img
-          src={item.img}
-          alt=""
-        />
-        <div className="textContainer">
-          <h2>{item.title}</h2>
-          <p>{item.desc}</p>
+        <div className="wrapper">
+          <div className="imageContainer">
+            <img
+              src={item.img}
+              alt=""
+            />
+          </div>
+          <motion.div
+            className="textContainer"
+            // style={{ y }}
+          >
+            <h2>{item.title}</h2>
+            <p>{item.desc}</p>
+            <button>Voir</button>
+          </motion.div>
         </div>
       </div>
     </section>
@@ -48,29 +63,29 @@ const Single = ({ item }) => {
 };
 
 const Portfolio = () => {
-//   const ref = useRef();
+  const ref = useRef();
 
-//   const { ScrollYProgress } = useScroll({
-//     target: ref,
-//     offset: ["end end", "end start"],
-//   });
+  const { ScrollYProgress } = useScroll({
+    target: ref,
+    offset: ["end end", "start start"],
+  });
 
-//   const scaleX = useSpring(ScrollYProgress, {
-//     stiffness: 100,
-//     damping: 30,
-//   });
+  const scaleX = useSpring(ScrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+  });
 
   return (
     <div
       className="portfolio"
-    //   ref={ref}
+      ref={ref}
     >
       <div className="progress">
         <h1> Projets : </h1>
-        <div
-        //   style={{ scaleX }}
+        <motion.div
+          style={{ scaleX: scaleX }}
           className="progressBar"
-        ></div>
+        ></motion.div>
       </div>
       {items.map((item) => (
         <Single
