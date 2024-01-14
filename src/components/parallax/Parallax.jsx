@@ -25,7 +25,7 @@ const Parallax = ({ type }) => {
       }}
     >
       <motion.h1 style={{ y: yText }}>
-        {type === "services" ? "Que faisons-nous ?" : "Ce qui a été fait "}
+        {type === "services" ? "Que faisons-nous ?" : " Quelques projets "}
       </motion.h1>
       <motion.div className="mountains"></motion.div>
       <motion.div

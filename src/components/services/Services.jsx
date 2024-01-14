@@ -34,9 +34,9 @@ const Services = () => {
     >
       <motion.div className="textContainer">
         <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+        Développeur web passionné, ma mission est de vous accompagner dans la conception et la création de votre site internet. .
           <br />
-          Illo dolore amet facere beatae mollitia maxime!
+          Je vous propose des solutions adaptées à vos besoins et à votre budget. 
         </p>
         <hr />
       </motion.div>
@@ -52,15 +52,15 @@ const Services = () => {
             alt=""
           />
           <h1>
-            <motion.b whileHover={{ color: "orange" }}>Unique</motion.b> Ideas
+            Des <motion.b whileHover={{ color: "orange" }}>Idées</motion.b> unique
           </h1>
         </div>
         <div className="title">
           <h1>
-            <motion.b whileHover={{ color: "orange" }}>For your</motion.b> Business.
+            Pour votre <motion.b whileHover={{ color: "orange" }}>Business</motion.b>
           </h1>
           <motion.button whileHover={{ color: "white" }}>
-            What we do
+            Ce que nous faisons
           </motion.button>
         </div>
       </motion.div>
@@ -74,7 +74,7 @@ const Services = () => {
           className="box"
           whileHover={{ background: "lightgray", color: "black" }}
         >
-          <h2>Branding</h2>
+          <h2>Fonctionnalité</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
             odio eum. Blanditiis in dolores unde, minima ullam dolorum ratione a
@@ -88,7 +88,7 @@ const Services = () => {
           className="box"
           whileHover={{ background: "lightgray", color: "black" }}
         >
-          <h2>Branding</h2>
+          <h2>Fonctionnalité</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
             odio eum. Blanditiis in dolores unde, minima ullam dolorum ratione a
@@ -102,7 +102,7 @@ const Services = () => {
           className="box"
           whileHover={{ background: "lightgray", color: "black" }}
         >
-          <h2>Branding</h2>
+          <h2>Fonctionnalité</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
             odio eum. Blanditiis in dolores unde, minima ullam dolorum ratione a

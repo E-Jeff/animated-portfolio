@@ -1,6 +1,7 @@
-import { useRef } from "react";
 import "./contact.scss";
+import { useRef } from "react";
 import { animate, motion, useInView } from "framer-motion";
+import { emailjs } from '@emailjs/browser';
 
 const variants = {
   initial: {
@@ -19,11 +20,29 @@ const variants = {
 
 const Contact = () => {
   const ref = useRef();
+  const formRef = useRef();
+  const [error, setError] = useState(null);
 
   const isInView = useInView(ref, { margin: "-100px" });
 
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_k9ex2p8', 'template_9z34pyf', form.current, 'YOUR_PUBLIC_KEY')
+      .then((result) => {
+        setError(false)
+          // console.log(result.text);
+      }, (error) => {
+        setError(false)
+          // console.log(error.text);
+      });
+  };
+
+  //2:13:00 
+
   return (
     <motion.div
+      ref={ref}
       className="contact"
       variants={variants}
       initial="initial"
@@ -33,7 +52,7 @@ const Contact = () => {
         className="textContainer"
         variants={variants}
       >
-        <motion.h1 variants={variants}>Prendre contact</motion.h1>
+        <motion.h1 variants={variants}>Prendre contact :</motion.h1>
         <motion.div
           className="item"
           variants={variants}
@@ -65,8 +84,8 @@ const Contact = () => {
         >
           <svg
             fill="#000000"
-            height="800px"
-            width="800px"
+            height="450px"
+            width="450px"
             version="1.1"
             id="Capa_1"
             xmlns="http://www.w3.org/2000/svg"
@@ -124,6 +143,7 @@ const Contact = () => {
           </svg>
         </motion.div>
         <motion.form
+          ref={formRef}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 4, duration: 1 }}
