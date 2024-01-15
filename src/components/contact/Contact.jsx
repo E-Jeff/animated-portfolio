@@ -1,7 +1,7 @@
 import "./contact.scss";
-import { useRef } from "react";
+import React, { useRef } from 'react';
 import { animate, motion, useInView } from "framer-motion";
-import { emailjs } from '@emailjs/browser';
+import emailjs from '@emailjs/browser';
 
 const variants = {
   initial: {
@@ -20,21 +20,22 @@ const variants = {
 
 const Contact = () => {
   const ref = useRef();
-  const formRef = useRef();
-  const [error, setError] = useState(null);
+  const form = useRef();
+  // const [error, setError] = useState(null);
+  // const [sucess, setSucess] = useState(null);
 
   const isInView = useInView(ref, { margin: "-100px" });
 
   const sendEmail = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm('service_k9ex2p8', 'template_9z34pyf', form.current, 'YOUR_PUBLIC_KEY')
+    emailjs.sendForm('service_k9ex2p8', 'template_9z34pyf', form.current, '_ikIZqEanMJfcoir5')
       .then((result) => {
-        setError(false)
-          // console.log(result.text);
+        // setSucess(true)
+          console.log(result.text);
       }, (error) => {
-        setError(false)
-          // console.log(error.text);
+        // setError(true)
+          console.log(error.text);
       });
   };
 
@@ -143,7 +144,8 @@ const Contact = () => {
           </svg>
         </motion.div>
         <motion.form
-          ref={formRef}
+          ref={form}
+          onSubmit={sendEmail}
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ delay: 4, duration: 1 }}
@@ -152,17 +154,23 @@ const Contact = () => {
             type="text"
             required
             placeholder="Nom"
+            name="name"
           />
           <input
             type="email"
             required
             placeholder="Email"
+            name="email"
           />
           <textarea
             rows="8"
             placeholder="Message..."
+            name="message"
           ></textarea>
-          <button type="submit">Envoyer</button>
+          {/* <button type="submit">Envoyer</button> */}
+          <input type="submit" value="Envoyer" />
+          {/* {error && "Erreur"} */}
+          {/* {sucess && "Succès"} */}
         </motion.form>
       </div>
     </motion.div>
