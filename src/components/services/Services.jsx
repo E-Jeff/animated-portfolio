@@ -57,7 +57,7 @@ const Services = () => {
         </div>
         <div className="title">
           <h1>
-            Pour votre <motion.b whileHover={{ color: "orange" }}>Business</motion.b>
+            Pour vos <motion.b whileHover={{ color: "orange" }}>Projets</motion.b>
           </h1>
           <motion.button whileHover={{ color: "white" }}>
             Ce que nous faisons
@@ -74,7 +74,7 @@ const Services = () => {
           className="box"
           whileHover={{ background: "lightgray", color: "black" }}
         >
-          <h2>Fonctionnalité</h2>
+          <h2>Fonctionnalité I</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
             odio eum. Blanditiis in dolores unde, minima ullam dolorum ratione a
@@ -88,7 +88,7 @@ const Services = () => {
           className="box"
           whileHover={{ background: "lightgray", color: "black" }}
         >
-          <h2>Fonctionnalité</h2>
+          <h2>Fonctionnalité II</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
             odio eum. Blanditiis in dolores unde, minima ullam dolorum ratione a
@@ -102,7 +102,7 @@ const Services = () => {
           className="box"
           whileHover={{ background: "lightgray", color: "black" }}
         >
-          <h2>Fonctionnalité</h2>
+          <h2>Fonctionnalité III</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores,
             odio eum. Blanditiis in dolores unde, minima ullam dolorum ratione a
